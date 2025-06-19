@@ -1,0 +1,24 @@
+# Ignore virtual environment folders
+.venv/
+venv/
+ENV/
+env/
+
+# Bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+
+# IDE/editor config (optional, but common)
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs (optional)
+*.log
+
+# Python egg info
+*.egg-info/
