@@ -28,7 +28,31 @@ PubkeyAuthentication yes
 ChallengeResponseAuthentication no
 ```
 
-## 4. Additional security measures
+## 4. Restart the ssh-server service
+
+```bash
+sudo rc-service sshd restart
+```
+
+## 5. Create a user other than root
+
+For Alpine distribution.
+User with root sudo privilegies
+
+```bash
+adduser myuser
+addgroup myuser wheel
+apk add sudo
+micro /etc/sudoers
+```
+Uncomment the following line in /etc/sudoers:
+
+```
+# %wheel ALL=(ALL) ALL
+```
+
+
+## 5. Additional security measures
 
 - Change the default listening port from 22 (clients must specify the new port when connecting).
 - Disable root login (look for PermitRootLogin on /etc/ssh/sshd_config)
