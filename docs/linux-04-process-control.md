@@ -48,3 +48,41 @@ pkill -u andre
 # Kills firefox processes owned by andre
 pkill -u andre firefox 
 ```
+### Process monitoring with ps
+
+```bash
+# Common flags used in the ps:
+# a: show processes for all users
+# u: display user oriented format
+# x: include processes not attached to the terminal (eg. daemons, GUI apps)
+
+ps aux
+
+# Frequent pattern to identify a PID
+
+ps aux | grep sshd
+pgrep sshd
+```
+
+### Niceness value
+
+Represent how "nice" a process is to others in the system. If a process as a high niceness value it means it has low priority. If it has low niceness it means it has high priority.
+
+Values range: [-20, 19]
+
+```bash
+# Starting a process with a specified niceness level
+
+# Example setting a nice value to 7
+nice -n 7 path/to/process/executable
+
+# Renicing a process
+renice -15 pid
+# Renicing all specific user processes
+renice 10 -u andre
+```
+### The /proc pseudo-filesystem
+
+The /proc is a pseudo-filesystem created by the kernel and is populated once viewed directly (ls may display wrong data).
+It contains detailed informations about processes when ps or top might not be enough.
+
