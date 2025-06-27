@@ -31,6 +31,9 @@ The internet is a complex network of networks that includes several ISP’s that
 
 *Access ISP* :  The ISP on the lowest tier in the Internet, it directly provides the access to end users.
 
-*Point of presence (PoP) *: Simply a group of network devices of a particular ISP where customer ISP’s can connect to (inside a dedicated building). They are only present in  Tier 1 ISP’s and regional ISP’s: since these act as providers for lower tier ISP’s.
+*Point of presence (PoP)* : Simply a group of network devices of a particular ISP where customer ISP’s can connect to (inside a dedicated building). They are only present in  Tier 1 ISP’s and regional ISP’s: since these act as providers for lower tier ISP’s.
 
 *Internet exchange point (IXP)* : A location where multiple different ISP’s can peer with each other. IXP’s are usually provided by third party companies.
+
+## Network performance metrics
+
