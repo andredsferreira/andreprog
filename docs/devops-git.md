@@ -8,11 +8,43 @@ origin/main : The name of the remote main branch
 git add -A
 git status
 git log --oneline
+```
+## Branching
+
+```bash
+# List all branches (inlcuding remotes)
 git branch -a
+
+# Create a branch
+git branch branch-name
+
+# Switching branch
+git switch branch-name
+
+# Creating and switching at the same time
+git switch -c branch-name
+
+# Merging to main
+git switch main
+git merge branch-name
+
+# Deleting branch
+# Soft delete
+git branch -d branch-name
+
+# Force delete
+git branch -D branch-name
+
+# Pushing local branch to remote
+git push origin branch-name
+
+# Delete remote branch
+git push origin --delete branch-name
 
 # Checking common commit (ancestor) of two branches
 git merge-base branch-A branch-B
 ```
+
 ## Undoing last commit
 
 ```bash
