@@ -3,7 +3,7 @@
 ## 1. Generate SSH key pair on client
 
 ```bash
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/my_custom_key
+ssh-keygen -t ed25519 -f ~/.ssh/my_custom_key
 ```
 
 ## 2. Copy the key to the server

@@ -5,6 +5,7 @@ origin/main : The name of the remote main branch
 ## Essential commands
 
 ```bash
+git add -A
 git status
 git log --oneline
 git branch -a
