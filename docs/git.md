@@ -35,6 +35,9 @@ git branch -d branch-name
 # Force delete
 git branch -D branch-name
 
+# Pulling specific remote branch
+git pull origin branch-name
+
 # Pushing local branch to remote
 git push origin branch-name
 
