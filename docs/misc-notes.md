@@ -29,3 +29,27 @@ DNS servers are usually UNIX machines running the BIND (Berkeley Internet Name D
 *Recursive queries* : A host queries a DNS server which in turn does the mapping of the hostname to ip address on it's behalf. In other words, the host does not directly receive the response.
 
 *Iterative queries* : A host (but usually another server in the hierarchy) queries a DNS server and directly receives the reply for the mapping it needs.
+
+## SMTP
+
+- It's a push protocol.
+- Runs over TCP on port 25.
+- After TCP handshake is established, an SMTP handshake also needs to be established for each email.
+
+*Mail User Agent (MUA) aka User Agent* : Responsible for sending emails from the client to the user's email provider server.
+
+*SMTP Server* : Responsible for sending emails from the user to the destination SMTP server. The SMTP protocol works between SMTP servers and when sending from client (it is considered a push protocol).
+
+### Eg: Alice sends an email to Bob
+
+1. Alice invokes her user agent to write the email message.
+
+2. The user agent sends the email to the Alice's SMTP server (using SMTP or HTTP).
+
+3. On Alice's SMTP server the email is placed on an outgoing queue.
+
+4. Through SMTP, Alice's SMTP server sends the email to Bob's SMTP server.
+
+5. The email is placed on Bob's mailbox in it's SMTP server.
+
+6. Bob invokes his user agent to retreive the email (using IMAP - Internet Mail Access Protocol, or HTTP) from his mailbox in the server.
