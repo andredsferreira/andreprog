@@ -50,7 +50,6 @@ Here is a big query example with trace aswell
 
 ```bash
 dig digitalocean.com any +trace
-
 ```
 ## Reverse DNS lookup
 

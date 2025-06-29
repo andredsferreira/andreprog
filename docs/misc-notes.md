@@ -1,6 +1,9 @@
 ## HTTP
 
-Remember that before any HTTP request is sent a TCP connection **MUST** be established: this performs a three-way handshake between the client and server (SYN, SYN-ACK, ACK) which consumes one extra RTT.
+- Remember that before any HTTP request is sent a TCP connection **MUST** be established: this performs a three-way handshake between the client and server (SYN, SYN-ACK, ACK) which consumes one extra RTT.
+
+- Remember that when reading files in python for HTTP responses or requests you should do it in bytes mode
+with flags as "rb" or "wb". This ensures you are not corrupting non text content such as HTML, images, videos, etc.
 
 ### Conditional GET
 
