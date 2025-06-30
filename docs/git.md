@@ -2,13 +2,84 @@
 
 origin/main : The name of the remote main branch
 
+## Configuring user for specific repo (on github)
+
+```bash
+git config user.name "Your Name"
+git config user.email "your.github.email@gitprovider.com"
+```
+
 ## Essential commands
 
 ```bash
-git add -A
+# Stage all
+git add *
+
+# Unstage all
+git restore * --staged
+
 git status
 git log --oneline
+git log -n 10 --oneline
 ```
+
+## Commits  
+
+### Changing last commit
+
+**WARNING**: Before doing this make sure nobody
+pulled the commit, or you are working in the branch
+alone.
+
+If the commit is already pushed:
+
+```bash
+git commit --amend
+git push --force
+```
+If the commit isn't pushed:
+
+```bash
+git commit --amend
+git push 
+```
+
+### Undoing last N commits
+
+```bash
+# Keeping changes staged
+git reset --soft HEAD~N
+
+# Unstaging changes
+git reset --mixed HEAD~N
+
+# Discarding (deleting) changes 
+git reset --hard HEAD~N
+```
+If the commits are pushed you can rewrite the history by running this the bellow command.
+
+```bash
+git push --force
+```
+
+**WARNING**: Make sure nobody pulled the commits. It is generally safer to this in a branch only you have access!
+
+## Git Aliases
+
+Creating alias "git br" for "git branch":
+
+```bash
+git config --global alias.br branch
+```
+
+Custom commands:
+
+```bash
+# Alias for showing the last 10 commits
+
+git config --global alias.lc "log -n 10 --oneline"
+```
+
 ## Branching
 
 ```bash
@@ -48,35 +119,4 @@ git push origin --delete branch-name
 git merge-base branch-A branch-B
 ```
 
-## Undoing last commit
 
-```bash
-# Keeping changes staged
-git reset --soft HEAD~1
-
-# Unstaging changes
-git reset --mixed HEAD~1
-
-# Discarding (deleting) changes 
-git reset --hard HEAD~1
-```
-
-## Changing last commit message
-
-**Warning**: Before doing this make sure nobody
-pulled the commit, or you are working in the branch
-alone.
-
-### If the commit is already pushed:
-
-
-```bash
-git commit --amend
-git push --force
-```
-### If the commit isn't pushed:
-
-```bash
-git commit --amend
-git push 
-```
