@@ -62,7 +62,7 @@ The main enhancement of HTTP/2 is the ability to frame HTTP requests and respons
 ## DNS
 
 DNS is both a protocol and a distributed database. 
-DNS connections run over UDP in port 53.
+DNS connections run over UDP in port 53 (but can exceptionally use TCP).
 DNS follows a client-server architecture.
 
 DNS servers are usually UNIX machines running the BIND (Berkeley Internet Name Domain) software: which allows for the translation of domain names into ip addresses.
@@ -98,3 +98,11 @@ DNS servers are usually UNIX machines running the BIND (Berkeley Internet Name D
 5. The email is placed on Bob's mailbox in it's SMTP server.
 
 6. Bob invokes his user agent to retreive the email (using IMAP - Internet Mail Access Protocol, or HTTP) from his mailbox in the server.
+
+## Transport Layer
+
+The transport layer provides a logical connection between *processes* running on hosts, while the network layer provides a logical communication between the *hosts* themselves. Remember, transport runs on top of the network layer.
+
+*Multiplexing* : Works on the sending host. It's the act of gathering different data from different sockets and attaching header information and sending the resulting segments to the network layer.
+
+*Demultiplexing* : Works on the receiving host. It's the act of receiving the different segments and analysing the port and sending the data to the correct socket.

@@ -2,22 +2,22 @@ from socket import *
 
 server_port = 12000
 
-server_socket = socket(AF_INET,SOCK_STREAM)
-server_socket.bind(("",server_port))
+server_sock = socket(AF_INET,SOCK_STREAM)
+server_sock.bind(("",server_port))
 
-# Server keeps listening on the connection socket
-server_socket.listen(1)
+# Server keeps listening on the connection sock
+server_sock.listen(1)
 
 print("The server is ready to receive")
 
-# Server processes specific request by creating a connection socket
+# Server processes specific request by creating a connection sock
 while True:
-  conn_socket, addr = server_socket.accept()
-  print(f"Connection socket established: {conn_socket}")
+  conn_sock, addr = server_sock.accept()
+  print(f"Connection sock established: {conn_sock}")
   print(f"Received from: {addr}")
 
-  sentence = conn_socket.recv(1024).decode()
+  sentence = conn_sock.recv(1024).decode()
   capitalized_setence = sentence.upper()
-  conn_socket.send(capitalized_setence.encode())
+  conn_sock.send(capitalized_setence.encode())
 
-  conn_socket.close()
+  conn_sock.close()
