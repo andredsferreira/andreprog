@@ -5,6 +5,48 @@
 - Remember that when reading files in python for HTTP responses or requests you should do it in bytes mode
 with flags as "rb" or "wb". This ensures you are not corrupting non text content such as HTML, images, videos, etc.
 
+### HTTP Request
+
+```
+GET /api/data HTTP/1.1\r\n
+Host: api.example.com\r\n
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)\r\n
+Accept: application/json\r\n
+Accept-Encoding: gzip, deflate, br\r\n
+Accept-Language: en-US,en;q=0.9\r\n
+Connection: keep-alive\r\n
+Authorization: Bearer abc123token\r\n
+Referer: https://example.com/dashboard\r\n
+Origin: https://example.com\r\n
+Cookie: sessionId=xyz456; theme=dark\r\n
+\r\n
+```
+
+### HTTP Response
+
+```
+HTTP/1.1 200 OK\r\n
+Date: Mon, 30 Jun 2025 12:34:56 GMT\r\n
+Content-Type: application/json; charset=utf-8\r\n
+Content-Length: 85\r\n
+Connection: keep-alive\r\n
+Cache-Control: no-cache, no-store, must-revalidate\r\n
+ETag: "abcde12345"\r\n
+Last-Modified: Mon, 30 Jun 2025 10:00:00 GMT\r\n
+Set-Cookie: sessionId=xyz456; Path=/; HttpOnly; Secure\r\n
+Access-Control-Allow-Origin: https://example.com\r\n
+Server: ExampleAPI/1.0\r\n
+\r\n
+{
+  "status": "success",
+  "data": {
+    "id": 1,
+    "name": "Example",
+    "active": true
+  }
+}
+```
+
 ### Conditional GET
 
 Conditional GET's are necessary in the presence of proxy caches.
