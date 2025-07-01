@@ -106,3 +106,22 @@ The transport layer provides a logical connection between *processes* running on
 *Multiplexing* : Works on the sending host. It's the act of gathering different data from different sockets and attaching header information and sending the resulting segments to the network layer.
 
 *Demultiplexing* : Works on the receiving host. It's the act of receiving the different segments and analysing the port and sending the data to the correct socket.
+
+### CHECKSUM
+
+Field that allows the checking of errors in the packet. The errors may occur during transmission between the two nodes. The errors may occur at any layer.
+
+### ARQ protocols
+
+*Automatic Repeat reQuest (ARQ)* : Protocols that are based on postive or negative acknowledgement of messages. They are capable of sending those aknowledgments according to whether the data is corrupted or not.
+
+*ACK* : Positive
+
+*NACK* : Negative
+
+Characteristics:
+
+- Error detection
+- Receiver feedback
+- Retransmission
+

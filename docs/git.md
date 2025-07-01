@@ -18,9 +18,16 @@ git add *
 # Unstage all
 git restore * --staged
 
+# View differences 
+git diff
+git diff /path/to/file
+git diff --staged
+
 git status
 git log --oneline
 git log -n 10 --oneline
+
+
 ```
 
 ## Commits  
