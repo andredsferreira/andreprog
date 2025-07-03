@@ -23,4 +23,24 @@ An IP address identifies a *network interface* not a *device*. Eg. routers have 
 
 IP addresses are speficic to network interfaces meaning if the host changes network the IP will also usually change.
 
-IP addresses are 32 bits long or 4 bytes.
+IP addresses are 32 bits long or 4 bytes, divided in 4 octets with a network and host portion. The division between both is usually indicated by CIDR notation /x where x is the number of bits to the network (prefix length).
+
+192.154.18.285/24
+
+172.18.154.122/21
+
+## Addressing Schemes
+
+- Classful addressing : Division between network and hosts occur in the octets.
+- Subnetted classful addressing : Takes the classful address and further divides the host portion, allocating some bits to a subnetwork.
+- Classless addressing : Division between network and hosts can occur in any position.
+
+## IP Address Management and Allocation
+
+*ICANN (Internet Corporation for Assigned Names and Numbers)* : Top of the hierarchy when it comes to public IP address attribution. It also registers domain names for DNS.
+
+*IANA (Internet Assigned Numbers Authority)* : Plays a similar role to ICANN. Both work side by side. 
+
+*RIR (Regional Internet Register)* : The assignement of regional IP addresses are delegated to RIR's: APNIC, ARIN, LACNIC, and RIPE NCC.
+
+ISP's obtain their addresses from a specific RIR.
