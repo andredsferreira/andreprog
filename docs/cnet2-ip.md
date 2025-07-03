@@ -44,3 +44,20 @@ IP addresses are 32 bits long or 4 bytes, divided in 4 octets with a network and
 *RIR (Regional Internet Register)* : The assignement of regional IP addresses are delegated to RIR's: APNIC, ARIN, LACNIC, and RIPE NCC.
 
 ISP's obtain their addresses from a specific RIR.
+
+## IP Classful Addressing
+
+Note : For class A, the 0.0.0.0 and 127.0.0.0 networks are reserved.
+
+Note : The [x] bit never changes!
+
+| Class | Theoretical Range | First Octet Lowest Value | First Octet Highest Value | CIDR Length |
+| - | ------------------------- | --------- | ---------- | --- |
+| A | 1.0.0.0 - 126.255.255.255 | [0]00 0001 | 0111 1110 | /8 |
+| B | 128.0.0.0 - 191.255.255.255 | [10]00 0000 | 1011 1111 | /16 | 
+| C | 192.0.0.0 - 223.255.255.255 | [110]0 0000 | 1101 1111 | /24 |
+| D | 224.0.0.0 - 239.255.255.255 | [1110] 0000 | 1110 1111 | /4 |
+| E | 240.0.0.0 - 255.255.255.255 | [1111] 0000 | 1111 1111 | /4 |
+
+
+
