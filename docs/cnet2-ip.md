@@ -47,17 +47,47 @@ ISP's obtain their addresses from a specific RIR.
 
 ## IP Classful Addressing
 
-Note : For class A, the 0.0.0.0 and 127.0.0.0 networks are reserved.
+Note : For class A, the 0.0.0.0 and 127.0.0.0 networks are reserved!
 
-Note : The [x] bit never changes!
+| Class | Theoretical Range | First Octet | CIDR Length |
+| ----- | --------------------- | ------- | ----------- |
+| A | 1.0.0.0 - 126.255.255.255   | 0xxx xxxx | /8  |
+| B | 128.0.0.0 - 191.255.255.255 | 10xx xxxx | /16 | 
+| C | 192.0.0.0 - 223.255.255.255 | 110x xxxx | /24 |
+| D | 224.0.0.0 - 239.255.255.255 | 1110 xxxx | /4  |
+| E | 240.0.0.0 - 255.255.255.255 | 1111 xxxx | /4  |
 
-| Class | Theoretical Range | First Octet Lowest Value | First Octet Highest Value | CIDR Length |
-| - | ------------------------- | --------- | ---------- | --- |
-| A | 1.0.0.0 - 126.255.255.255 | [0]00 0001 | 0111 1110 | /8 |
-| B | 128.0.0.0 - 191.255.255.255 | [10]00 0000 | 1011 1111 | /16 | 
-| C | 192.0.0.0 - 223.255.255.255 | [110]0 0000 | 1101 1111 | /24 |
-| D | 224.0.0.0 - 239.255.255.255 | [1110] 0000 | 1110 1111 | /4 |
-| E | 240.0.0.0 - 255.255.255.255 | [1111] 0000 | 1111 1111 | /4 |
+- Classes A to C are used for unicast addressing and identify hosts/network interfaces.
 
+- Class D is used for multicast addressing.
 
+- Class E is reserved for testing purposes.
+
+## Classful Addressing Capacities
+
+| Class | NetworkBits/HostBits | N° Fixed Bits | Usable Network Bits | Total Networks | Total Hosts | 
+| ----- | -------------------- | ------------- | ------------------- | -------------- | ----------- |
+| A | 8/24  | 1 | 8 - 1 = 7   | 2⁷ - 2 = 126    | 2²⁴ = 16,777,214  | 
+| B | 16/16 | 2 | 16 - 2 = 14 | 2¹⁴ = 16,384    | 2¹⁶ = 65,534      |
+| C | 24/8  | 3 | 24 - 3 = 21 | 2²¹ = 2,097,152 | 2⁸ =  254         |
+
+## Private IP Addresses
+
+These won't be routed in the Internet and are usually used in local LAN's.
+
+- 10.0.0.0/8
+
+- 172.16.0.0/12
+
+- 192.168.0.0/16
+
+These are also private but have different purposes.
+
+- 0.0.0.0 - 0.255.255.255 : Any range.
+
+- 127.0.0.0 - 127.255.255.255 : Loopback.
+
+- 224.0.0.0 - 239.255.255.255 : Multicast.
+
+- 240.0.0.0 - 255.255.255.255 : Testing purposes.
 
