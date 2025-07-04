@@ -91,3 +91,22 @@ These are also private but have different purposes.
 
 - 240.0.0.0 - 255.255.255.255 : Testing purposes.
 
+## Subnetting
+
+A devices finds the network ID of an IP by performing an AND operation between the IP and it's network mask.
+
+To determine the network ID's of the subnets you start with the original network ID then changes the least significant bit of the subnet bits to 1: the resulting decimal number (call it n) serves as the increment for the subnet network ID's. This means that all subnet ID's are multiples of n.
+
+Eg. Consider class B address: x.y.00000000.00000000/16. We chose 3 bits for subnetting (8 total) changing the least significant one to 1 yielding: x.y.00100000.00000000/19 (mask 255.255.224.0). The decimal number of the third octet is 32. This means that all the subnet ID's are multiples of 32:
+
+x.y.0.0     (00000000)
+x.y.32.0    (00100000)
+x.y.64.0    (01000000)
+x.y.96.0    (01100000)
+x.y.128.0   (10000000)
+x.y.160.0   (10100000)
+x.y.192.0   (11000000)
+x.y.224.0   (11100000)
+
+
+
