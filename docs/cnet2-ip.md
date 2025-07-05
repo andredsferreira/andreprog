@@ -108,5 +108,7 @@ x.y.160.0   (10100000)
 x.y.192.0   (11000000)
 x.y.224.0   (11100000)
 
+## VLSM : Variable Length Subnet Masking
 
+VLSM : Allows for the subnetting of subnets. This can be done as many times as the administrator sees fit and helps a more effecient allocation of IP's within a organization.
 
