@@ -112,3 +112,18 @@ x.y.224.0   (11100000)
 
 VLSM : Allows for the subnetting of subnets. This can be done as many times as the administrator sees fit and helps a more effecient allocation of IP's within a organization.
 
+## Classless Inter-Domain Routing (CIDR)
+
+It applies the concepts of subnetting local LAN's and VLSM to the Internet. It's the addressing scheme in use today. Solves many problems of the previous Classful scheme, such as, large routing tables, inneficient use of address space by companies.
+
+## IP Datagram
+
+[ Version  | IHL | TOS | TL | Identification | FLAGS | Offset | TTL | Protocol | Header Checksum | SRC Address | DEST Address | Options (padding) | Data ]
+
+### Options Format
+
+[ Option Type | Option Length | Option Data ]
+
+Option type:
+
+[ Copied Flag | Option Class | Option Number ]
