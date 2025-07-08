@@ -127,3 +127,19 @@ It applies the concepts of subnetting local LAN's and VLSM to the Internet. It's
 Option type:
 
 [ Copied Flag | Option Class | Option Number ]
+
+## Internet Minimum MTU : 576 Bytes
+
+Defined in RFC 791 routers must handle a MTU of 576 Bytes. Even if the local MTU is larger (Ethernet is 1500 bytes for example), a host may choose the default 576 to ensure no fragmentation occurs later in the path.
+
+## IP Fragment Reassembly
+
+Fragment reassemlby is only done at the *destination device*.
+
+The process is usually the following:
+
+1. The device checks the identification field, MF flag, and the offset field, and stores the first fragment in a special buffer associated with that particular IP message (identified in the identification field). 
+
+2. It initializes a timer that puts an upper boundary on the amount of time it waits for the next fragment (if it expires an ICMP time exceeded message is generated, since IP is unrealible the sending host must rely on higher-layer protocols such as TCP to retransmit the full message, as the fragments in the buffer are discarded).
+
+2. It keeps receiving and storing the fragments in the buffer. When it receives the last one (MF flag set to 0) the buffer has the complete reassembled message.
