@@ -143,3 +143,11 @@ The process is usually the following:
 2. It initializes a timer that puts an upper boundary on the amount of time it waits for the next fragment (if it expires an ICMP time exceeded message is generated, since IP is unrealible the sending host must rely on higher-layer protocols such as TCP to retransmit the full message, as the fragments in the buffer are discarded).
 
 2. It keeps receiving and storing the fragments in the buffer. When it receives the last one (MF flag set to 0) the buffer has the complete reassembled message.
+
+## IP Routing Overview
+
+The source host is the first to decide where to send the packet. It must see if it is on the same LAN, or it must be sent to the default gateway (router). If it's the latter option the router then routes the packet.
+
+*Next-hop routing* : The process of routing an IP datagram through several routers, step by step. Eg. an IP datagram travels to the local router, which then decides the next-hop (next router), which then decides the next-hop again, and so forth until it reaches the destination.
+
+*Route aggregation* : Several aggregated subnetworks thanks to CIDR. This simplifies routing in the internet, eg., if an ISP is given the block 89.152.0.0/14, the router just forwards packets to the ISP's routers which know of the subnetworks of that block. This abstracts complexity and establishes a hierarchy between routers.
