@@ -38,8 +38,19 @@ NOTE: The header checksums for IP and the transport layer protocol (TCP or UDP) 
 
 NOTE: If multiple routers are used the must coordinate their address mappings (this makes dynamic mapping extremely difficult).
 
-### Bidirectional NAT
+### Bidirectional NAT (aka two-way/inbound NAT)
+
+Exact same as unidirectional NAT except requests can be generated from the outside.
+
+![Inbound NAT](images/cnet-nat-02.png)
 
 ### Port-based (overloaded) NAT
+
+In port-based NAT several hosts usually share one public address. The router differentiates the requests and makes the correct translations based on a combination of the IP address and an associated port number.
+
+In the image bellow the routes sees the source address and port 10.0.0.207:7000, since this port is already in use it associates the port 7224 to the request and saves the mapping in a table. Once the response comes back it sees the destination has the port number 7224 so it knows that it must go to 10.0.0.2007 at port 7000
+
+![Port-based NAT](images/cnet-nat-03.png)
+
 
 ### Overlapping/Twice NAT
