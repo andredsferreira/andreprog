@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'markdown_notes/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
