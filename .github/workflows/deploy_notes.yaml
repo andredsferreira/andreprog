@@ -1,0 +1,27 @@
+name: Deploy Notes
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        
+      - name: Add SSH host key to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          echo "[vsgate-ssh.dei.isep.ipp.pt]:10323 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAIHAyrnMd/Stce0q2MX5mKeRHMboQtMToP++UqPbBoZ" >> ~/.ssh/known_hosts
+
+      - name: Set up SSH key manually
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/debian_main
+          chmod 600 ~/.ssh/debian_main
+
+      - name: Run deploy script
+        run: bash ./bash/deploy_notes.sh
