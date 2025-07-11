@@ -24,13 +24,3 @@ As said, IPsec is a collection of protocols and standards. Here are the importan
 | 2408 | Internet Security Association and Key Management Protocol (ISAKMP)  | Defines methods for exchanging keys and negotiating security associations.  |
 | 2409 | The Internet Key Exchange (IKE)  | Describes the IKE protocol which is based on ISAKMP and OAKLEY and used to exchanged keys and security associations.  |
 | 2412 | The OAKLEY Key Determination Protocol  | Generic key exchanging protocol.  |
-
-
-
-Testing the deployment scripts.
-Testing the deployment scripts.
-Testing the deployment scripts.
-Testing the deployment scripts.
-Testing the deployment scripts.
-
-

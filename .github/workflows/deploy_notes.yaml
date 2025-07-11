@@ -3,7 +3,7 @@ name: Deploy Notes
 on:
   push:
     paths:
-      - 'docs/**'
+      - 'markdown_notes/**'
 
 jobs:
   deploy:

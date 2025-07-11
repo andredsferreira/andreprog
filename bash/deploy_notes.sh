@@ -15,7 +15,7 @@ SSH_CMD="ssh -i $IDENTITY -p $PORT $USER@$HOST"
 SCP_CMD="scp -i $IDENTITY -P $PORT"
 
 echo "Copying docs/ to remote server..."
-$SCP_CMD -r docs/* "$USER@$HOST:$REMOTE_PATH/"
+$SCP_CMD -r markdown_notes/* "$USER@$HOST:$REMOTE_PATH/"
 
 echo "SSH into remote to build notes and restart server..."
 $SSH_CMD bash -c "'
@@ -31,7 +31,7 @@ $SSH_CMD bash -c "'
   done
 
   echo \"Cleaning up Markdown files...\"
-  rm -f *.md
+  find . -type f -name "*.md" -delete
 
   echo \"Building new goserver binary...\"
   cd /home/andre/goserver
