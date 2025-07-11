@@ -10,6 +10,10 @@ ssh-keygen -t ed25519 -f ~/.ssh/my_custom_key
 
 ```bash
 ssh-copy-id -i ~/.ssh/my_custom_key.pub user@server
+
+# With specific SSH port
+ssh-copy-id -i ~/.ssh/my_custom_key.pub -o Port=12353 user@server
+
 ```
 
 ## 3. Disable password authentication on server

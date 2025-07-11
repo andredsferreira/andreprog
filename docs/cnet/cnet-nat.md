@@ -52,5 +52,14 @@ In the image bellow the routes sees the source address and port 10.0.0.207:7000,
 
 ![Port-based NAT](images/cnet-nat-03.png)
 
+## NAT related issues
 
-### Overlapping/Twice NAT
+NAT must recalculate not only the IP header checksum but also the underlying transport layer header checksum, wether TCP or UDP.
+
+Sometimes the translated address by NAT requires more ASCII characters (eg. 10.0.0.207 is 10 ASCII and 194.54.21.11 is 12 ASCII characters long). This means that the length of the IP datagram changes and, has a consequence, if TCP is involved the sequence numbers must also be recalculated. NAT is expected to deal with all this. 
+
+IP works very closely with ICMP, NAT must also change some addresses contained in ICMP messages.
+
+Some Application level protocols include IP addresses as part of the payload and thus NAT must also be configured to deal with those addresses. FTP is the most notorious case, and the complexity rises exponentially if the IP datagrams are fragemented.
+
+NAT can't be used with IPsec in transport mode, it may only be used with IPsec in tunnel mode but there are also complications here. 
