@@ -34,9 +34,25 @@ The image bellow represents the IPsec protocol suite.
 ### IPsec Authentication Header (AH)
 
 - Provides authentication services for IP, i.e, ensures that the sender is really who he says he is.
+
 - Ensures the integrity of the IP datagram, i.e, intermediate routers don't change it.
+
 - Protects against replay attacks: a message is captured and resent by an unauthorized user.
 
 ### Encapsulating Security Payload (ESP)
 
 - It encrypts the payload of the IP datagram.
+
+### IPsec Support Components
+
+In order to function properly IPsec needs more than the core protocols:
+
+- Encryption and Hashing algorithms need to be defined between the hosts that want to exchange information.
+
+- Because IPsec is flexible in the way the security is implemented, Security Policies and Security Associations must be defined aswell.
+
+- Means for exchanging the keys used for decrypting, this is provided by IKE.
+
+*Security policy* : Defines which traffic in the network should be protected using IPsec features. In general, it's a rule that says what should be protected. For example, all subnets and hosts of 10.0.0.0/26.
+
+*Security association* : An agreement between the devices that tells exactly how they should protect the traffic, example: use the Arg2 algorithm for integrity (hashing) and RSA for encryption; lifetime of keys; mode of operation (tunnel or transport); sequence numbers to protect against replay attacks; etc. 
