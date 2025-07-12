@@ -12,7 +12,7 @@ IPsec is not a single protocol but a set of protocols and services that provide 
 - Ability for devices to negotiate security algorithms and keys.
 - Protection against certain types of attacks such as replay attacks.
 
-## IPsec standards
+## IPsec Standards
 
 As said, IPsec is a collection of protocols and standards. Here are the important related RFC's.
 
@@ -24,3 +24,19 @@ As said, IPsec is a collection of protocols and standards. Here are the importan
 | 2408 | Internet Security Association and Key Management Protocol (ISAKMP)  | Defines methods for exchanging keys and negotiating security associations.  |
 | 2409 | The Internet Key Exchange (IKE)  | Describes the IKE protocol which is based on ISAKMP and OAKLEY and used to exchanged keys and security associations.  |
 | 2412 | The OAKLEY Key Determination Protocol  | Generic key exchanging protocol.  |
+
+## IPsec General Operation
+
+The image bellow represents the IPsec protocol suite.
+
+![IPsec Protocol Suite](images/cnet-nat-04.png)
+
+### IPsec Authentication Header (AH)
+
+- Provides authentication services for IP, i.e, ensures that the sender is really who he says he is.
+- Ensures the integrity of the IP datagram, i.e, intermediate routers don't change it.
+- Protects against replay attacks: a message is captured and resent by an unauthorized user.
+
+### Encapsulating Security Payload (ESP)
+
+- It encrypts the payload of the IP datagram.
